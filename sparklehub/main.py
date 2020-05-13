@@ -15,7 +15,7 @@ from sparklehub.consts import SignatureType
 from sparklehub.helpers import signature
 
 configuration = openapi_client.Configuration(
-    host=f"https://api.sparklehub.io/v1/sparkle",
+    host="https://api.sparklehub.io/v1/sparkle",
     api_key={"Authorization": ""},
     api_key_prefix={"Authorization": "Token"},
 )
