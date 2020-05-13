@@ -1,6 +1,7 @@
 import io
 
 import pytest
+
 from sparklehub.helpers.signature import sign_ed25519_b64
 
 

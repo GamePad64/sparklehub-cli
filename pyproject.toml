@@ -28,7 +28,7 @@ known_first_party = "sparklehub"
 line_length = 120
 multi_line_output = 3
 not_skip = "__init__.py"
-skip_glob = ".git,.venv"
+skip_glob = ".git,.venv,sparklehub/openapi_client/*"
 
 [tool.poetry]
 name = "sparklehub"

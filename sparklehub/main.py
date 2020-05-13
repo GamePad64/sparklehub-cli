@@ -7,12 +7,12 @@ from typing import BinaryIO, Dict, Optional, Union
 
 import click
 import httpx
-from colorama import Fore
-from colorama import init as colorama_init
+from colorama import Fore, init as colorama_init
+from tqdm import tqdm
+
 from sparklehub import openapi_client
 from sparklehub.consts import SignatureType
 from sparklehub.helpers import signature
-from tqdm import tqdm
 
 configuration = openapi_client.Configuration(
     host=f"https://api.sparklehub.io/v1/sparkle",
