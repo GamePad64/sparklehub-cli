@@ -7,14 +7,17 @@ from typing import BinaryIO, Dict, Optional, Union
 
 import click
 import httpx
-from colorama import Fore, init as colorama_init
+from colorama import Fore
+from colorama import init as colorama_init
 from sparklehub import openapi_client
 from sparklehub.consts import SignatureType
 from sparklehub.helpers import signature
 from tqdm import tqdm
 
 configuration = openapi_client.Configuration(
-    host=f"http://127.0.0.1:8000/v1/sparkle", api_key={"Authorization": ""}, api_key_prefix={"Authorization": "Token"}
+    host=f"https://api.sparklehub.io/v1/sparkle",
+    api_key={"Authorization": ""},
+    api_key_prefix={"Authorization": "Token"},
 )
 
 
@@ -112,23 +115,19 @@ def sign_package(package, signer_kwargs, packages_api):
 
 # CLI
 @click.group()
-@click.pass_context
-def cli(ctx):
+def cli():
     pass
 
 
 @cli.group()
 @click.option("-k", "--api-key", "api_key", envvar="SPARKLEHUB_API_KEY", required=True)
-@click.pass_context
-def release(ctx, api_key):
+def release(api_key):
     configuration.api_key["Authorization"] = api_key
-    ctx.obj["API_KEY"] = api_key
 
 
 @release.command("list")
 @click.option("-c", "--channel", "channel", required=True, envvar="SPARKLEHUB_CHANNEL", type=uuid.UUID)
-@click.pass_context
-def release_list(ctx, channel):
+def release_list(channel):
     print(Fore.LIGHTCYAN_EX + "Gathering release information from SparkleHub\u2728...", file=sys.stderr)
 
     with openapi_client.ApiClient(configuration) as api_client:
@@ -146,8 +145,7 @@ def release_list(ctx, channel):
 @click.option("--eddsa-privkey", "eddsa_privkey", type=str)
 @click.option("--eddsa-privkey-keychain", "eddsa_privkey_keychain", is_flag=True)
 @click.argument("release", envvar="SPARKLEHUB_RELEASE", type=str, default="latest")
-@click.pass_context
-def release_sign(ctx, channel, release, dsa_privkey_f, eddsa_privkey, eddsa_privkey_f, eddsa_privkey_keychain):
+def release_sign(channel, release, dsa_privkey_f, eddsa_privkey, eddsa_privkey_f, eddsa_privkey_keychain):
     signer_kwargs = read_keys(
         dsa_privkey_f=dsa_privkey_f,
         eddsa_privkey=eddsa_privkey,
@@ -160,25 +158,33 @@ def release_sign(ctx, channel, release, dsa_privkey_f, eddsa_privkey, eddsa_priv
     with openapi_client.ApiClient(configuration) as api_client:
         releases_api = openapi_client.ReleasesApi(api_client)
         if release == "latest":
-            release_obj = releases_api.releases_latest(channel=str(channel))[0]
-            print(Fore.LIGHTCYAN_EX + f"Latest release: {release_obj.version}", file=sys.stderr)
+            releases = releases_api.releases_latest(channel=str(channel))
+            if len(releases) == 0:
+                print(Fore.LIGHTRED_EX + "No releases so far", file=sys.stderr)
+                exit(1)
+            print(Fore.LIGHTCYAN_EX + f"Latest release: {releases[0].version}", file=sys.stderr)
+        elif release == "all":
+            releases = releases_api.releases_list(channel=str(channel))
         else:
-            release_obj = releases_api.releases_read(channel=str(channel), id=release)
+            releases = [releases_api.releases_read(channel=str(channel), id=release)]
 
         packages_api = openapi_client.PackagesApi(api_client)
-        packages = packages_api.packages_list(release=release_obj.id)
 
-        # pprint(packages)
+        for release_obj in releases:
+            print(Fore.LIGHTYELLOW_EX + f'--- Release "{release_obj.title}"')
+            packages = packages_api.packages_list(release=release_obj.id)
 
-        packages_to_sign = list(filter(lambda x: package_need_sign(x, signer_kwargs), packages))
+            # pprint(packages)
 
-        if len(packages_to_sign) == 0:
-            print(Fore.LIGHTGREEN_EX + f'Release "{release_obj.version}" has all packages signed')
+            packages_to_sign = list(filter(lambda x: package_need_sign(x, signer_kwargs), packages))
 
-        print(Fore.LIGHTYELLOW_EX + f'Release "{release_obj.version}" has {len(packages_to_sign)} packages to sign')
+            if len(packages_to_sign) == 0:
+                print(Fore.LIGHTGREEN_EX + f'Release "{release_obj.version}" has all packages signed')
 
-        for i, package in enumerate(packages_to_sign, start=1):
-            sign_package(package, signer_kwargs, packages_api)
+            print(Fore.LIGHTYELLOW_EX + f'Release "{release_obj.version}" has {len(packages_to_sign)} packages to sign')
+
+            for i, package in enumerate(packages_to_sign, start=1):
+                sign_package(package, signer_kwargs, packages_api)
 
 
 @cli.command()
