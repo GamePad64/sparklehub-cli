@@ -592,7 +592,7 @@ marker = "sys_platform == \"darwin\""
 name = "pyobjc-core"
 optional = false
 python-versions = ">=3.6"
-version = "6.2"
+version = "6.2.1"
 
 [[package]]
 category = "main"
@@ -601,10 +601,10 @@ marker = "sys_platform == \"darwin\""
 name = "pyobjc-framework-cocoa"
 optional = false
 python-versions = ">=3.6"
-version = "6.2"
+version = "6.2.1"
 
 [package.dependencies]
-pyobjc-core = ">=6.2"
+pyobjc-core = ">=6.2.1"
 
 [[package]]
 category = "main"
@@ -613,11 +613,11 @@ marker = "sys_platform == \"darwin\""
 name = "pyobjc-framework-security"
 optional = false
 python-versions = ">=3.6"
-version = "6.2"
+version = "6.2.1"
 
 [package.dependencies]
-pyobjc-core = ">=6.2"
-pyobjc-framework-Cocoa = ">=6.2"
+pyobjc-core = ">=6.2.1"
+pyobjc-framework-Cocoa = ">=6.2.1"
 
 [[package]]
 category = "dev"
@@ -1078,22 +1078,22 @@ pygments = [
     {file = "Pygments-2.6.1.tar.gz", hash = "sha256:647344a061c249a3b74e230c739f434d7ea4d8b1d5f3721bc0f3558049b38f44"},
 ]
 pyobjc-core = [
-    {file = "pyobjc-core-6.2.tar.gz", hash = "sha256:843b175e6bd6309c4457090ca52ca8e20cb1e6be19df1bc74d1ed1889f52149c"},
-    {file = "pyobjc_core-6.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:cb130c953c79cb2df4eb3976b7fe28c336b0de0dc550b0574eca8856c76cd147"},
-    {file = "pyobjc_core-6.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:ccfad6cba29652b005bc41e819ad70d203cc3e57a16e75e27bc4e6979034c7c0"},
-    {file = "pyobjc_core-6.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:6af32dc491c575346400c29649fffe6e0a1911553b9218529deafc56fa357bdd"},
-    {file = "pyobjc_core-6.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:8dd816c03fcbcbd8da8beb30dffe3aaaf8077d852cca4d636e3d7dd0ab48d39d"},
+    {file = "pyobjc-core-6.2.1.tar.gz", hash = "sha256:ea9ab7839a022668964ca8ab4f37dc75c04743354260370d463ebdce5c05aa38"},
+    {file = "pyobjc_core-6.2.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:492519af43f4364aefacbe1706d55c712f3c6b73e4702a40cebf25bdf0373182"},
+    {file = "pyobjc_core-6.2.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:ce883d94a50b3fc285f39ef0286bbe8c6b50e87f310c1dea8b82996a4f4dd135"},
+    {file = "pyobjc_core-6.2.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:503e42b9592dbc17cadb455fff3cfcc68caa00d3b815375ed9afb159b2722014"},
+    {file = "pyobjc_core-6.2.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:e68cec4f6d069fba1b3364b983abc9dff49763b58270f01904fc80ab8e7c4051"},
 ]
 pyobjc-framework-cocoa = [
-    {file = "pyobjc-framework-Cocoa-6.2.tar.gz", hash = "sha256:e15bbf82bfe3a14dfd29c7465cc5d8edab16d546410239b7e1a4db62ded4a5b2"},
-    {file = "pyobjc_framework_Cocoa-6.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:04b994a26bc30c912f2f5165d57a987f35889a36dd9c104674bc449c53649629"},
-    {file = "pyobjc_framework_Cocoa-6.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:09612dd81fafb6e1a8eb597b5e523c9de103a50af79e95afbf13b8a5937e3cfa"},
-    {file = "pyobjc_framework_Cocoa-6.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:cbe4f1917aa5def4a77fd4199a9697f3b4224acf59acf4e01fe9a7c73d49b08c"},
-    {file = "pyobjc_framework_Cocoa-6.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:ef3c21a8b37519e3a3880fc0c5539fe27afd3e0235c8ebc9c87b3d0354cbb4ea"},
+    {file = "pyobjc-framework-Cocoa-6.2.1.tar.gz", hash = "sha256:c41dc4b590a6bd10f60d2b979508a1b02c38664b3bcb2225f914439485a1551f"},
+    {file = "pyobjc_framework_Cocoa-6.2.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:d46b8587aeea09baa998a526d741162141a12660ef57f8114fc9dd67297c6045"},
+    {file = "pyobjc_framework_Cocoa-6.2.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:4c4ecb69f17d3291562fa5adfe55a20f4a9f03e25baac7d9fbe2e54aa1f17081"},
+    {file = "pyobjc_framework_Cocoa-6.2.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:94260a8366569625d5f9380b1b8c3b58a54a883a6412dcc47353f8bcce9da5b7"},
+    {file = "pyobjc_framework_Cocoa-6.2.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:17737dfd80b7e89f654413b52eb934b9c180442f60c728545b5404655a05f229"},
 ]
 pyobjc-framework-security = [
-    {file = "pyobjc-framework-Security-6.2.tar.gz", hash = "sha256:2c5e5bf37e22317a82bd6d37ecc088db92ba81a9b9da99b31131dbf2e2751808"},
-    {file = "pyobjc_framework_Security-6.2-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:0ee1e55ce1e2120eea752c8bfdc003e0b206d50301c4fb29ce47dc8b0fbc14d4"},
+    {file = "pyobjc-framework-Security-6.2.1.tar.gz", hash = "sha256:4a0a27d2507c4d82417d6ec3e188d0d08ad269494d68a57ec54fd9e7b30e718f"},
+    {file = "pyobjc_framework_Security-6.2.1-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:e0f8695b984a34b13ad40b3acfafe0407bb425d072b056aaf027a57668175925"},
 ]
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
