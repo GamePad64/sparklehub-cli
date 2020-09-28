@@ -45,7 +45,7 @@ python = "^3.6"
 click = "^7.1.1"
 cryptography = "^2.9.2"
 httpx = "^0.13.3"
-tqdm = "^4.46.0"
+tqdm = "^4.50.0"
 pure25519 = "^0.0.1"
 pyobjc-framework-Security = {version = "^6.2", platform = "darwin"}
 colorama = "^0.4.3"
