@@ -26,7 +26,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [GamePad64/sparklehub-cli](https://github.com/GamePad64/sparklehub-cli)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|19<br/>Tools used|01/05/24 <br/>Report generated|
+|19<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -83,7 +83,7 @@ Full tech stack [here](/techstack.md)
 |[certifi](https://pypi.org/project/certifi)|v2020.4.5|05/04/20|Alexander Shishenko |MPL-2.0|[CVE-2023-37920](https://github.com/advisories/GHSA-xqr8-7jwr-rhp7) (High)<br/>[CVE-2022-23491](https://github.com/advisories/GHSA-43fp-rhv2-5gv8) (Moderate)|
 |[click](https://pypi.org/project/click)|v7.1.2|05/04/20|Alexander Shishenko |BSD-3-Clause|N/A|
 |[colorama](https://pypi.org/project/colorama)|v0.4.3|05/04/20|Alexander Shishenko |BSD-3-Clause|N/A|
-|[cryptography](https://pypi.org/project/cryptography)|v2.9.2|05/04/20|Alexander Shishenko |BSD-3-Clause,Apache-2.0|[CVE-2023-0286](https://github.com/advisories/GHSA-x4qr-2fvf-3mr5) (High)<br/>[CVE-2020-25659](https://github.com/advisories/GHSA-hggm-jpg3-v476) (Moderate)<br/>[CVE-2023-23931](https://github.com/advisories/GHSA-w7pp-m8wf-vj6r) (Moderate)<br/>[](https://github.com/advisories/GHSA-jm77-qphf-c4w8) (Low)<br/>[](https://github.com/advisories/GHSA-v8gr-m533-ghj9) (Low)<br/>[](https://github.com/advisories/GHSA-5cpq-8wj7-hf2v) (Low)|
+|[cryptography](https://pypi.org/project/cryptography)|v2.9.2|05/04/20|Alexander Shishenko |BSD-3-Clause,Apache-2.0|[CVE-2023-0286](https://github.com/advisories/GHSA-x4qr-2fvf-3mr5) (High)<br/>[CVE-2023-50782](https://github.com/advisories/GHSA-3ww4-gg4f-jr7f) (High)<br/>[CVE-2020-25659](https://github.com/advisories/GHSA-hggm-jpg3-v476) (Moderate)<br/>[CVE-2023-23931](https://github.com/advisories/GHSA-w7pp-m8wf-vj6r) (Moderate)<br/>[CVE-2024-0727](https://github.com/advisories/GHSA-9v9h-cgj8-h64p) (Moderate)<br/>[](https://github.com/advisories/GHSA-v8gr-m533-ghj9) (Low)<br/>[](https://github.com/advisories/GHSA-5cpq-8wj7-hf2v) (Low)<br/>[](https://github.com/advisories/GHSA-jm77-qphf-c4w8) (Low)|
 |[flake8](https://pypi.org/project/flake8)|v3.8.2|05/25/20|dependabot-preview[bot] |MIT|N/A|
 |[httpx](https://pypi.org/project/httpx)|v0.13.3|06/01/20|dependabot-preview[bot] |BSD-3-Clause|[CVE-2021-41945](https://github.com/advisories/GHSA-h8pj-cxx2-jfg2) (Critical)|
 |[ipython](https://pypi.org/project/ipython)|v7.15.0|06/01/20|dependabot-preview[bot] |BSD-3-Clause|[CVE-2022-21699](https://github.com/advisories/GHSA-pq7m-3gw7-gq5x) (High)|
